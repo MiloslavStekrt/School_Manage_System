@@ -7,6 +7,8 @@ class Student(models.Model):
 	home_address = models.TextField()
 	password = models.CharField(max_length=200)
 	year_study = models.DecimalField(max_digits=60, decimal_places=0)
+	def __str__(self):
+		return self.name
 
 class Ucitel(models.Model):
 	name = models.CharField(max_length=200)
@@ -15,3 +17,5 @@ class Ucitel(models.Model):
 	home_address = models.CharField(max_length=200)
 	let_ve_skole = models.DecimalField(max_digits=75, decimal_places=2)
 	nastup = models.DateTimeField(auto_now=True)
+	def __str__(self):
+		return self.name
